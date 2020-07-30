@@ -16,10 +16,17 @@ const commads = new Commads();
 client.on("ready", () => {
     console.log("Hello word!");
     commads.init();
+
+    client.user.setPresence({
+        status: "online",
+        activity: {
+            name: "upf!help :3   v1.2.0",
+            type: "PLAYING"
+        }
+    });
 });
 
 client.on("message", (message) => {
-
     if (commads.particion(message)) {
       commads.findCommand(message);
     }

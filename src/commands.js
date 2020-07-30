@@ -41,7 +41,6 @@ class Commands {
         try{ 
           if (posibleCommand[0] == this.command.list[i].name) {
             commandFind = this.command.list[i].name;
-            console.log(commandFind)
           }
         }
         catch {
