@@ -2,6 +2,7 @@ let Say = require("./commands/say");
 let Gevaraconaguaazulada = require("./commands/gevaraconaguaazulada");
 let Help = require("./commands/help");
 let Gif = require("./commands/gif/gif");
+let ThanksYou = require("./commands/thanksYou");
 
 class Commands {
   constructor() {
@@ -17,7 +18,8 @@ class Commands {
       new Say("say", "puedo hacer que yo diga algo con upf!say [tu palabra]"),
       new Gevaraconaguaazulada("gevaraconaguaazulada", "gevaraconaguaazulada nwn upf!gevaraconaguaazulada"),
       new Help("help", "te doy la lista de comandos upf!help"),
-      new Gif("comandos gif: ", "upf!kiss, upf!happy")
+      new Gif("comandos gif: ", "usa Gifs nwn  upf!kiss, upf!happy, upf!kill, upf!hug, upf!elcomandonoexiste, upf!sleep, upf!hi, upf!angry"),
+      new ThanksYou("thanksYou",":D")
     ];
   }
 
@@ -48,14 +50,25 @@ class Commands {
           this.command.list[1].on(message);
         } else if (commandFind == this.command.list[2].name) {
           this.command.list[2].on(message, this.command.list);
+        } else if (commandFind == this.command.list[4].name) {
+          this.command.list[4].on(message);
         } 
 
       } else {
-        if (posibleCommand == "happy" || posibleCommand == "kiss") {
-          this.command.list[3].on(message);
-          }
-        else {
-          message.channel.send("el comando no existe UnU, intenta con: upf!help");    
+        if (
+          posibleCommand == "happy" ||
+          posibleCommand == "kiss" ||
+          posibleCommand == "kill" ||
+          posibleCommand == "hug" ||
+          posibleCommand == "sleep" ||
+          posibleCommand == "hi" ||
+          posibleCommand == "angry"
+        ) {
+          this.command.list[3].on(message, posibleCommand);
+        } else {
+          message.channel.send(
+            "el comando no existe UnU, intenta con: upf!help"
+          );
         }
           
       }

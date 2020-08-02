@@ -20,7 +20,7 @@ client.on("ready", () => {
     client.user.setPresence({
         status: "online",
         activity: {
-            name: "upf!help :3   v1.3.0",
+            name: "upf!help :3   v1.3.2",
             type: "PLAYING"
         }
     });
@@ -30,8 +30,6 @@ client.on("message", (message) => {
     if (commads.particion(message)) {
       commads.findCommand(message);
     }
-
-
 
     badWords.findWord(message,(data) => {
         if(data){
