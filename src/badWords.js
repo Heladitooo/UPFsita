@@ -2,30 +2,58 @@ class BadWords {
   constructor() {
     this.counterWords = 0;
     this.words = [
-      "tarado",
-      "tarada",
-      "pendejo",
-      "pendeja",
-      "tonto",
-      "idiota",
-      "imbecil",
-      "inutil",
-      "burro",
-      "burra",
-      "toxico",
-      "toxica",
+      "mierda",
       "estupido",
-      "estupida",
-      "puto",
+      "carajo",
+      "pichurria",
+      "pendejo",
+      "بزرگترین توهین",
+      "estupido",
       "puta",
+      "puto",
       "perra",
-      "tonta",
+      "recontrachanfles",
+      "zorra",
+      "retrasado",
+      "golazoooo",
+      "marica",
+      "maricon",
+      "estupida",
+      "jodete",
+      "mierdita",
+      "mierdota",
+      "imbecil",
+      "imbeciles",
+      "caraculo ",
+      "idiota",
+      "idiotas",
+      "caraculo",
+      "joputas",
+      "gonorrea",
+      "reputisima",
+      "re putisima",
+      "putas",
+      "putos",
+      "re mil puta",
+      "coño",
+      "putita",
+      "putito",
+      "inutil",
+      "verga",
+      "chupa pija",
+      "puteadas",
+      "culo roto",
+      "aborto fallido",
+      "maldito",
+      "maldita",
+      "aborto",
+      "culoroto"
     ];
   }
 
   findWord(message, cb) {
     for (let i = 0; i < this.words.length; i++) {
-      if (message.content.includes(this.words[i])) {
+      if (message.content.toLowerCase().includes(this.words[i])) {
         cb(true);
         break;
       }

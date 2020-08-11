@@ -4,6 +4,7 @@
 //  8ball lovecalc
 // posiblemente ruleta rusa
 
+const fs = require("fs");
 const Discord = require("discord.js");
 const client = new Discord.Client(); //Nuevo cliente de discord
     
@@ -20,7 +21,7 @@ client.on("ready", () => {
     client.user.setPresence({
         status: "online",
         activity: {
-            name: "upf!help :3   v1.3.2",
+            name: "upf!help :3   v1.4.0",
             type: "PLAYING"
         }
     });
@@ -32,16 +33,23 @@ client.on("message", (message) => {
     }
 
     badWords.findWord(message,(data) => {
-        if(data){
-            message.channel.send("No, tu.")
-            badWords.counterWords++;
+        if (data && message.author != "736342162886623313"){
+            message.author.send("https://pbs.twimg.com/media/EZiN_NbX0AANLZG.jpg \n");
+            message.author.send("escribiste: " + message.content +". **usa buen vocabulario 7-7, tu mensaje fue borrado.**");
+
+            fs.appendFile("./src/badWords/badWords.txt", message.author.username + "   " + message.content + " " + new Date() + "\n", 
+                function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                    console.log(message.author.username + " " + message.content + " " + new Date());
+                })
+
+            message.delete();
+
         }
     })
     
-    if (badWords.counterWords > 4){
-        badWords.counterWords = 0;
-        message.channel.send("https://www.youtube.com/watch?v=uBbwZCRIILM")
-    }
 });
 
-client.login("");
+client.login("NzM2MzQyMTYyODg2NjIzMzEz.XxtaFA.LUWmb4Nz17Fcpj2JqIYWWD84aLM");

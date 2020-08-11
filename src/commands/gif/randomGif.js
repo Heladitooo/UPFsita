@@ -150,6 +150,54 @@ function randomGif(categorie, user, user2){
         "https://media1.tenor.com/images/0e091a4895308fa0d2c7940ec2ad21ed/tenor.gif",
         "https://media1.tenor.com/images/0e091a4895308fa0d2c7940ec2ad21ed/tenor.gif",
       ],
+      sad: [
+        "https://media1.tenor.com/images/1d85e1d25ca4f8da6dd6ec7e66b684a0/tenor.gif",
+        "https://media1.tenor.com/images/bd900a9a994238168c8e843cc3a575a6/tenor.gif",
+        "https://media1.tenor.com/images/76d6d1ab30252270844689d3e9dc3214/tenor.gif",
+        "https://media1.tenor.com/images/97a0ceefeacc6760878ebf73af7fbf4a/tenor.gif",
+        "https://media1.tenor.com/images/93398357a449dad11335242bd48dd4a4/tenor.gif",
+        "https://media1.tenor.com/images/efca6ac695440470c306e6ea127d783a/tenor.gif",
+        "https://media1.tenor.com/images/9e49b5a5f97d1a91733f38404eff8303/tenor.gif",
+        "https://media1.tenor.com/images/9cbeebd1e7cc941e6a3f468bae756547/tenor.gif",
+      ],
+      bye: [
+        "https://media1.tenor.com/images/a5644e4f73314edf63146f3b0771fe01/tenor.gif",
+        "https://media1.tenor.com/images/085549bc07267c5d73a44d5f4e5087d7/tenor.gif",
+        "https://media1.tenor.com/images/a8d83fe94552385e903d80ef3347f3a7/tenor.gif",
+        "https://media1.tenor.com/images/8a87452b39aa0a394f19b42d8d2e790d/tenor.gif",
+        "https://media1.tenor.com/images/43b26f57280c43f77e87a546bf6c6011/tenor.gif",
+        "https://media1.tenor.com/images/33fdd8dc7564b56d5905428484f5aee4/tenor.gif",
+        "https://media1.tenor.com/images/2f7df460196625edc45b8380d158e5ee/tenor.gif",
+        "https://media1.tenor.com/images/17c977bb6585d853971cda6d27f1f834/tenor.gif",
+        "https://media1.tenor.com/images/7928ea12327afc2442bce9b18a6b3f0a/tenor.gif",
+        "https://media1.tenor.com/images/bf7f5103da5b74ed58d8799990f7b62e/tenor.gif",
+        "https://media1.tenor.com/images/34657995bdac0aa521277ecc21c4e4a0/tenor.gif",
+        "https://media1.tenor.com/images/51c5c144c04874dc2e071b966b2dda6c/tenor.gif",
+
+      ],
+      dance: [
+        "https://media.discordapp.net/attachments/301161155831922688/733111096004575292/Fernan_capo.gif",
+        "https://media1.tenor.com/images/fbf9160aaf0140037000f926737f4746/tenor.gif",
+        "https://media1.tenor.com/images/8df28ac0b72e04b6f464759d909a160f/tenor.gif",
+        "https://media1.tenor.com/images/6ce5b343132056d16ceba80452b2db2c/tenor.gif",
+        "https://media1.tenor.com/images/40859995268c1f5465ab2fbcde560d24/tenor.gif",
+        "https://media.discordapp.net/attachments/270670070248636417/722144588264898641/image0-1-1.gif",
+        "https://media1.tenor.com/images/b503b4f6389fc18bc58ea1d4c98aca7c/tenor.gif",
+        "https://media.discordapp.net/attachments/270670070248636417/732781417976823849/image0.gif",
+        "https://media1.tenor.com/images/603297e43546f61fe87e6f9095f8382a/tenor.gif",
+        "https://media1.tenor.com/images/e6a032ab0c391d1f14cd6768775ab46a/tenor.gif",
+        "https://media.discordapp.net/attachments/690564212891582518/733094747857616957/sans_estudiando_xd_1.gif",
+        "https://media1.tenor.com/images/9c4f39ada9d7dc5d4c3216f1c4d2c068/tenor.gif",
+        "https://media.discordapp.net/attachments/399448944889036801/570373865008660540/chikadance5.gif",
+        "https://media.discordapp.net/attachments/564064651399397407/731543902581948526/image0.gif",
+        "https://media1.tenor.com/images/924836b2a053619bbd216cd5d1494faa/tenor.gif",
+        "https://media1.tenor.com/images/d5bd643d52fd0d22922964d0b2838c1b/tenor.gif",
+        "https://media1.tenor.com/images/8fdcda26512797826631511017a11f93/tenor.gif",
+        "https://media1.tenor.com/images/ef5b04b011af9abbd070f2772b3edf2d/tenor.gif",
+        "https://media1.tenor.com/images/751469ca5bf52e595b14910532a171fa/tenor.gif",
+        "https://media1.tenor.com/images/aa9374ef547c871d4626a22d24042d1f/tenor.gif",
+        "https://media1.tenor.com/images/c516ca70e76578431857f15f880a93f2/tenor.gif",
+      ]
     };
 
     if(categorie == "kiss"){
@@ -228,7 +276,39 @@ function randomGif(categorie, user, user2){
         },
       };
     }
+
+  if (categorie == "sad") {
+    return {
+      gif: gifList.sad[random(0, 7)],
+      works: user + " entristece por " + user2 + " unu",
+      doesWork: {
+        showGif: true,
+        alone: user + " se entristece  unu",
+      },
+    };
+  }
     
+  if (categorie == "bye") {
+    return {
+      gif: gifList.bye[random(0, 11)],
+      works: user + " se despide de " + user2,
+      doesWork: {
+        showGif: true,
+        alone: user + " tiene que ir, se despide",
+      },
+    };
+  }
+
+  if (categorie == "dance") {
+    return {
+      gif: gifList.dance[random(0, 20)],
+      works: user + " baila con " + user2 + " [MUSICA]",
+      doesWork: {
+        showGif: true,
+        alone: user + " baila :D" + " [MUSICA]",
+      },
+    };
+  }
 
 }
 

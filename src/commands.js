@@ -3,6 +3,7 @@ let Gevaraconaguaazulada = require("./commands/gevaraconaguaazulada");
 let Help = require("./commands/help");
 let Gif = require("./commands/gif/gif");
 let ThanksYou = require("./commands/thanksYou");
+let Love = require("./commands/love");
 
 class Commands {
   constructor() {
@@ -18,8 +19,9 @@ class Commands {
       new Say("say", "puedo hacer que yo diga algo con upf!say [tu palabra]"),
       new Gevaraconaguaazulada("gevaraconaguaazulada", "gevaraconaguaazulada nwn upf!gevaraconaguaazulada"),
       new Help("help", "te doy la lista de comandos upf!help"),
-      new Gif("comandos gif: ", "usa Gifs nwn  upf!kiss, upf!happy, upf!kill, upf!hug, upf!elcomandonoexiste, upf!sleep, upf!hi, upf!angry"),
-      new ThanksYou("thanksYou",":D")
+      new Gif("comandos gif: ", "usa Gifs nwn  upf!kiss, upf!bye, upf!dance, upf!happy, upf!sad, upf!kill, upf!hug, upf!elcomandonoexiste, upf!sleep, upf!hi, upf!angry"),
+      new ThanksYou("thanksYou",":D"),
+      new Love("love","posibilidades de amor pibe 7w7 upf!love")
     ];
   }
 
@@ -52,6 +54,8 @@ class Commands {
           this.command.list[2].on(message, this.command.list);
         } else if (commandFind == this.command.list[4].name) {
           this.command.list[4].on(message);
+        } else if (commandFind == this.command.list[5].name) {
+          this.command.list[5].on(message);
         } 
 
       } else {
@@ -62,7 +66,10 @@ class Commands {
           posibleCommand == "hug" ||
           posibleCommand == "sleep" ||
           posibleCommand == "hi" ||
-          posibleCommand == "angry"
+          posibleCommand == "angry" ||
+          posibleCommand == "sad" ||
+          posibleCommand == "bye" ||
+          posibleCommand == "dance"
         ) {
           this.command.list[3].on(message, posibleCommand);
         } else {
