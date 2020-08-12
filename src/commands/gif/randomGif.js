@@ -294,7 +294,7 @@ function randomGif(categorie, user, user2){
       works: user + " se despide de " + user2,
       doesWork: {
         showGif: true,
-        alone: user + " tiene que ir, se despide",
+        alone: user + " se tiene que ir, se despide",
       },
     };
   }

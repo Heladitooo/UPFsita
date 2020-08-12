@@ -1,9 +1,9 @@
 const Command = require("./command");
 const Discord = require("discord.js");
 const chooseColor = require("../chooseColor");
-const randomNumber = require("../random")
-const name = "UPFsita"
-const gufm = require("../getUserFromMention");
+const randomNumber = require("../random");
+const name = "UPFsita";
+
 
 class Love extends Command {
   constructor(name, description) {
@@ -12,7 +12,7 @@ class Love extends Command {
   
   calculateLove(message, user, xuser){
     let random = randomNumber(0, 100);
-    let mixNames = user.slice(1, Math.ceil(user.length / 2)) + xuser.slice(Math.ceil(xuser.length / 2), xuser.length);
+    let mixNames = user.slice(0, Math.ceil(user.length / 2)) + xuser.slice(Math.ceil(xuser.length / 2), xuser.length);
 
     if (random < 20) {
       const embed = new Discord.MessageEmbed()
@@ -54,7 +54,7 @@ class Love extends Command {
       const embed = new Discord.MessageEmbed()
         .setColor(chooseColor())
         .setTitle("la expectativa de amor de " + user + " con " + xuser + " es de: " + random + "%\n" + "nombre de pareja: " + mixNames)
-        .setDescription("Aceptenlo E>")
+        .setDescription("Aceptenlo <3")
         .setThumbnail('https://i.pinimg.com/originals/4f/54/48/4f5448517022c9613d9feb832ebf7bbe.png');
 
       message.channel.send(embed);

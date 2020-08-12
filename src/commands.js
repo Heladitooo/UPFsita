@@ -4,6 +4,7 @@ let Help = require("./commands/help");
 let Gif = require("./commands/gif/gif");
 let ThanksYou = require("./commands/thanksYou");
 let Love = require("./commands/love");
+let Answer = require("./commands/answer");
 
 class Commands {
   constructor() {
@@ -21,7 +22,8 @@ class Commands {
       new Help("help", "te doy la lista de comandos upf!help"),
       new Gif("comandos gif: ", "usa Gifs nwn  upf!kiss, upf!bye, upf!dance, upf!happy, upf!sad, upf!kill, upf!hug, upf!elcomandonoexiste, upf!sleep, upf!hi, upf!angry"),
       new ThanksYou("thanksYou",":D"),
-      new Love("love","posibilidades de amor pibe 7w7 upf!love")
+      new Love("love","posibilidades de amor pibe 7w7 upf!love"),
+      new Answer("answer", "te respondo si o no a tu duda :D"),
     ];
   }
 
@@ -56,6 +58,8 @@ class Commands {
           this.command.list[4].on(message);
         } else if (commandFind == this.command.list[5].name) {
           this.command.list[5].on(message);
+        } else if (commandFind == this.command.list[6].name) {
+          this.command.list[6].on(message);
         } 
 
       } else {

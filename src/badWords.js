@@ -47,7 +47,11 @@ class BadWords {
       "maldito",
       "maldita",
       "aborto",
-      "culoroto"
+      "culoroto",
+      "concha de tu madre",
+      "pvto",
+      "m1erda",
+      "shit",
     ];
   }
 
